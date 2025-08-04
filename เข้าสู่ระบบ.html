@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ลิขิต - สมัครสมาชิก / เข้าสู่ระบบ</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #a5d6a7;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    main {
+      max-width: 500px;
+      margin: 30px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      font-size: 1.8em;
+      color: #388e3c;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      font-size: 1.2em;
+      margin: 15px 0 5px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 1.1em;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .button-group {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    button {
+      flex: 1;
+      padding: 15px;
+      font-size: 1.2em;
+      color: white;
+      background-color: #66bb6a;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #4caf50;
+    }
+
+    hr {
+      margin: 40px 0;
+      border: none;
+      border-top: 1px solid #ccc;
+    }
+
+    .note {
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 10px;
+      }
+
+      .button-group {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ลิขิต</h1>
+  </header>
+
+  <main>
+
+    <section>
+  <h2>เข้าสู่ระบบ</h2>
+
+  <label for="login-contact">เบอร์โทรศัพท์หรืออีเมล</label>
+  <input type="text" id="login-contact" name="login-contact" placeholder="กรอกเบอร์โทรหรืออีเมล">
+
+  <label for="login-password">รหัสผ่าน </label>
+  <input type="password" id="login-password" name="password" placeholder="กรอกรหัสผ่าน">
+
+  <p class="note">* กรุณากรอกเพียงเบอร์โทรศัพท์หรืออีเมล</p>
+
+  <div class="button-group">
+    <button onclick="login()">เข้าสู่ระบบ</button>
+  </div>
+
+  <div style="text-align: center; margin-top: 15px;">
+  <a href="ลืมรหัสผ่าน.html" style="color: #2e7d32; font-size: 1em; text-decoration: underline;">
+    ลืมรหัสผ่าน?
+  </a>
+</div>
+
+</section>
+
+<script>
+  function login() {
+    const contact = document.getElementById("login-contact").value.trim();
+    const password = document.getElementById("login-password").value.trim();
+
+    if (!contact) {
+      alert("กรุณากรอกเบอร์โทรศัพท์หรืออีเมล");
+      return;
+    }
+
+    if (contact.includes("@")) {
+      // เป็นอีเมล
+      if (!password) {
+        alert("กรุณากรอกรหัสผ่านสำหรับอีเมล");
+        return;
+      }
+      alert("เข้าสู่ระบบด้วยอีเมล: " + contact);
+      // เชื่อม backend ตรวจสอบอีเมลและรหัสผ่าน
+    } else if (/^\d{9,15}$/.test(contact)) {
+      // เป็นเบอร์โทร
+      alert("ระบบจะส่ง OTP ไปยังเบอร์โทร: " + contact);
+      // เชื่อมระบบส่ง OTP ทาง SMS
+    } else {
+      alert("รูปแบบไม่ถูกต้อง กรุณากรอกเบอร์โทรหรืออีเมลให้ถูกต้อง");
+    }
+  }
+</script>
+
+</body>
+</html>
+

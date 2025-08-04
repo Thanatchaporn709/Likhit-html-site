@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ลืมรหัสผ่าน - ลิขิต</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #a5d6a7;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    main {
+      max-width: 500px;
+      margin: 30px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      font-size: 1.8em;
+      color: #388e3c;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      font-size: 1.1em;
+      margin: 15px 0 5px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .button-group {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    button {
+      padding: 15px;
+      font-size: 1.1em;
+      color: white;
+      background-color: #66bb6a;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #4caf50;
+    }
+
+    .note {
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ลิขิต</h1>
+  </header>
+
+  <main>
+    <h2>ลืมรหัสผ่าน</h2>
+
+    <label for="contact">อีเมลหรือเบอร์โทรศัพท์</label>
+    <input type="text" id="contact" name="contact" placeholder="กรอกอีเมลหรือเบอร์โทรศัพท์ของคุณ">
+    <p class="note">*ระบบจะส่งรหัสยืนยัน (OTP) ไปยังช่องทางที่คุณกรอก</p>
+
+    <button onclick="sendOTP()">ขอรหัสยืนยัน</button>
+
+    <label for="otp">รหัสยืนยัน (OTP)</label>
+    <input type="text" id="otp" name="otp" placeholder="กรอกรหัส OTP ที่ได้รับ">
+
+    <label for="new-password">ตั้งรหัสผ่านใหม่</label>
+    <input type="password" id="new-password" name="new-password" placeholder="ตั้งรหัสผ่านใหม่">
+
+    <label for="confirm-password">ยืนยันรหัสผ่านใหม่</label>
+    <input type="password" id="confirm-password" name="confirm-password" placeholder="พิมพ์รหัสผ่านอีกครั้ง">
+
+    <div class="button-group">
+      <button>รีเซ็ตรหัสผ่าน</button>
+    </div>
+  </main>
+
+</body>
+</html>

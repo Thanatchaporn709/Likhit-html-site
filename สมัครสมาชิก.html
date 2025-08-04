@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ลิขิต - สมัครสมาชิก / เข้าสู่ระบบ</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #a5d6a7;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 4.5em;
+      margin: 0;
+    }
+
+    main {
+      max-width: 500px;
+      margin: 30px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      font-size: 1.8em;
+      color: #388e3c;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      font-size: 1.2em;
+      margin: 15px 0 5px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 1.1em;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .button-group {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    button {
+      flex: 1;
+      padding: 15px;
+      font-size: 1.2em;
+      color: white;
+      background-color: #66bb6a;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #4caf50;
+    }
+
+    hr {
+      margin: 40px 0;
+      border: none;
+      border-top: 1px solid #ccc;
+    }
+
+    .note {
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 10px;
+      }
+
+      .button-group {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ลิขิต</h1>
+  </header>
+
+  <main>
+  <section>
+    <h2>สมัครสมาชิก</h2>
+    
+    <label for="contact">เบอร์โทรศัพท์หรืออีเมล</label>
+    <input type="text" id="contact" name="contact" placeholder="กรอกเบอร์โทรหรืออีเมล">
+    <p class="note">* กรุณากรอกเพียงเบอร์โทรศัพท์หรืออีเมล</p>
+
+    <button onclick="sendCode()">ขอรหัสยืนยัน</button>
+    <p class="note">ระบบจะส่งรหัสยืนยัน (OTP) ไปยังเบอร์โทรศัพท์หรืออีเมลที่คุณกรอก</p>
+
+    <label for="otp">รหัสยืนยัน (OTP)</label>
+    <input type="text" id="otp" name="otp" placeholder="กรอกรหัส OTP ที่ได้รับ">
+
+    <label for="password">ตั้งรหัสผ่าน</label>
+    <input type="password" id="password" name="password" placeholder="ตั้งรหัสผ่าน">
+
+    <div class="button-group">
+      <button>ยืนยันและสมัครสมาชิก</button>
+    </div>
+  </section>
+
+  <div style="text-align: center; margin-top: 20px;">
+    <p>เคยสมัครสมาชิกแล้ว?</p>
+    <a href="เข้าสู่ระบบ.html" style="color: #2e7d32; text-decoration: underline; font-size: 1.1em;">
+      เข้าสู่ระบบ
+    </a>
+  </div>
+</main>
+
+
+</body>
+</html>
+
